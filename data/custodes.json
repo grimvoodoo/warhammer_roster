@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Trajann Valoris",
+    "stats": {
+      "movement": 6,
+      "toughness": 6,
+      "save": 2,
+      "invulnerable": 4,
+      "wounds": 7,
+      "leadership": 5,
+      "objective_control": 2
+    },
+    "weapons": {
+      "ranged_weapons": [
+        {
+          "name": "Watcher's Axe",
+          "weapon_range": 24,
+          "attacks": 2,
+          "hit": 2,
+          "strength": 5,
+          "armour_pen": 2,
+          "damage": 3,
+          "tags": ["Assault"]
+        }
+      ],
+      "melee_weapons": [
+        {
+          "name": "Watcher's Axe",
+          "weapon_range": 0,
+          "attacks": 6,
+          "hit": 2,
+          "strength": 10,
+          "armour_pen": 2,
+          "damage": 3
+        }
+      ]
+    },
+    "tags": [
+      "Infantry",
+      "Character",
+      "Epic Hero",
+      "Imperium",
+      "Trajann Valoris"
+    ]
+  },
+  {
+    "name": "Allarus Custodians",
+    "stats": {
+      "movement": 5,
+      "toughness": 7,
+      "save": 2,
+      "invulnerable": 4,
+      "wounds": 4,
+      "leadership": 6,
+      "objective_control": 2
+    },
+    "weapons": {
+      "ranged_weapons": [
+        {
+          "name": "Balistus Grenade Launcher",
+          "weapon_range": 18,
+          "attacks": "d6",
+          "hit": 2,
+          "strength": 4,
+          "armour_pen": 1,
+          "damage": 1,
+          "tags": ["Blast"]
+        },
+        {
+          "name": "Castellan axe",
+          "weapon_range": 24,
+          "attacks": 2,
+          "hit": 2,
+          "strength": 5,
+          "armour_pen": 2,
+          "damage": 3,
+          "tags": ["Assault"]
+        },
+        {
+          "name": "Guardian Spear",
+          "weapon_range": 24,
+          "attacks": 2,
+          "hit": 2,
+          "strength": 5,
+          "armour_pen": 2,
+          "damage": 3,
+          "tags": ["Assault"]
+        }
+      ],
+      "melee_weapons": [
+        {
+          "name": "Castellan axe",
+          "weapon_range": 0,
+          "attacks": 4,
+          "hit": 3,
+          "strength": 9,
+          "armour_pen": 1,
+          "damage": 3
+        },
+        {
+          "name": "Guardian Spear",
+          "weapon_range": 0,
+          "attacks": 5,
+          "hit": 2,
+          "strength": 7,
+          "armour_pen": 2,
+          "damage": 2
+        },
+        {
+          "name": "Misericordia",
+          "weapon_range": 0,
+          "attacks": 5,
+          "hit": 2,
+          "strength": 5,
+          "armour_pen": 2,
+          "damage": 1
+        }
+      ]
+    },
+    "tags": ["Infantry", "Terminator", "Imperium", "Allarus Custodians"]
+  },
+  {
+    "name": "Prosecutors",
+    "stats": {
+      "movement": 6,
+      "toughness": 3,
+      "save": 3,
+      "invulnerable": 7,
+      "wounds": 1,
+      "leadership": 6,
+      "objective_control": 2
+    },
+    "weapons": {
+      "ranged_weapons": [
+        {
+          "name": "Boltgun",
+          "weapon_range": 24,
+          "attacks": 1,
+          "hit": 3,
+          "strength": 4,
+          "armour_pen": 0,
+          "damage": 1,
+          "tags": ["Rapid Fire"]
+        }
+      ],
+      "melee_weapons": [
+        {
+          "name": "Close Combat Weapon",
+          "weapon_range": 0,
+          "attacks": 2,
+          "hit": 3,
+          "strength": 4,
+          "armour_pen": 0,
+          "damage": 1
+        }
+      ]
+    },
+    "tags": [
+      "Infantry",
+      "Battleline",
+      "Imperium",
+      "Anathma Psykana",
+      "Prosecutors"
+    ]
+  }
+]
