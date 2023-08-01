@@ -2,7 +2,7 @@ use dotenv::dotenv;
 use mongodb::{options::ClientOptions, Client, Database};
 use std::env;
 
-use super::models::Unit;
+use super::units::Unit;
 pub type Army = Vec<Unit>;
 
 pub async fn mongodb() -> Database {
