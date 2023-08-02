@@ -1,13 +1,22 @@
 mod models;
+mod routers;
 
-use models::data_import;
-// use std::{fs::File, io::Write};
+use actix_web::{App, HttpServer};
+use routers::routes::{create_unit, get_units};
 
-#[tokio::main]
-async fn main() {
-    data_import::import().await;
-    // let diagram = diagrams::draw_diagrams().await;
-    // let mut file = File::create("diagram.dot").expect("Failed to create file");
-    // file.write_all(diagram.as_bytes())
-    //     .expect("Failed to write to file");
+use crate::{models::db_write::import_from_json, routers::routes::get_list};
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    import_from_json().await;
+    println!("Server running at 127.0.0.1:8000");
+    HttpServer::new(|| {
+        App::new()
+            .service(get_units)
+            .service(create_unit)
+            .service(get_list)
+    })
+    .bind("127.0.0.1:8000")?
+    .run()
+    .await
 }

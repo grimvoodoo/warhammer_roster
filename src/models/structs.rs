@@ -44,3 +44,10 @@ pub struct Unit {
     pub models: HashMap<String, Vec<i32>>,
     pub equipment: Option<Vec<String>>,
 }
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Marker {
+    pub name: String,
+    pub quantity: i32,
+    pub weapons: Option<Vec<i32>>,
+}

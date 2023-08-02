@@ -1,10 +1,14 @@
-use bson::{doc, Bson};
+use actix_web::web;
+use bson::{doc, Bson, Document};
 use dotenv::dotenv;
+use mongodb::Collection;
 use std::{collections::HashMap, fs};
 
 use crate::models::mongodb::{mongodb, Army};
 
-pub async fn import() {
+use super::structs::Marker;
+
+pub async fn import_from_json() {
     dotenv().ok();
     // Read the files to memory
     let tyranids = fs::read_to_string("data/tyranids.json").expect("Unable to read file");
@@ -16,7 +20,7 @@ pub async fn import() {
     //     serde_json::from_str(&custodes).expect("failed to convert to string");
 
     // Connect to mongodb
-    let db = mongodb().await;
+    let db = mongodb("roster").await;
 
     // Write the tyranids to the DB if its empty
     for unit in &tyranids_roster {
@@ -113,4 +117,23 @@ pub async fn import() {
     //         println!("Data already present for {}, not importing", army)
     //     }
     // }
+}
+
+pub async fn write_list(
+    user: &str,
+    json: web::Json<Marker>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    dotenv().ok();
+    // Connect to mongodb
+    let db = mongodb("users").await;
+    let collection: Collection<Document> = db.collection(user);
+
+    let unit = bson::to_bson(&json).unwrap().as_document().unwrap().clone();
+
+    collection
+        .insert_one(unit, None)
+        .await
+        .expect("Failed to write to the database");
+
+    Ok(())
 }
